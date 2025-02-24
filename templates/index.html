@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="Brain Tumour Model" content="Brain Tumour Model"/>
+        <title> Brain Tumour Model</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    </head>
+    <body>
+        <div class="input_card">
+            <form method="POST" enctype="multipart/form-data">
+                <h3 class="result">Brain Tumour Model Model</h3>
+                <hr/>
+               
+                <div class="form-group">
+                    <label for="n3">Pick an Image:</label>
+                    <input type="file" name="n3" id="n3" accept=".jpg, .jpeg, .png" required>
+                </div>
+               
+                <div class="button_container">
+                    <input type="reset" value="Reset"/>
+                    <input type="submit" value="Predict"/>
+                </div>
+            </form>
+            <hr/>
+            <h3 class="result">{{ result }}</h3>
+        </div>
+    </body>
+</html>
