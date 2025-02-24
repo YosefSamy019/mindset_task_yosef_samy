@@ -21,8 +21,8 @@ def init():
     if model_2 is None:
         model_2 = models.load_model('best_model_2.keras')
         
-    if model_3 is None:
-        model_3 = models.load_model('best_model_3.keras')
+    # if model_3 is None:
+    #     model_3 = models.load_model('best_model_3.keras')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -52,10 +52,10 @@ def index():
         # Predict 1
         # pred_1 = model_1.predict(image_array)
         pred_2 = model_2.predict(image_array)
-        pred_3 = model_3.predict(image_array)
+        # pred_3 = model_3.predict(image_array)
 
         # voting = np.mean([pred_1, pred_2, pred_3], axis=1)
-        voting = np.mean([pred_2, pred_3], axis=1)
+        voting = np.mean([pred_2], axis=1)
 
         label = labels[np.argmax(voting[0])]
         
